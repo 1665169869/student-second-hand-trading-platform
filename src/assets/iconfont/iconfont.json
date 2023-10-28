@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9100582",
+      "name": "分类",
+      "font_class": "fenlei",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "9540064",
+      "name": "主页",
+      "font_class": "zhuye",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "9540065",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    }
+  ]
+}
