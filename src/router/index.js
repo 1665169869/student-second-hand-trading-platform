@@ -10,6 +10,9 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home, //.vue不可省略
+    meta:{
+      keepAlive: true
+    },
     children: [
       {
         path: '/dashboard',
@@ -20,20 +23,44 @@ const routes = [
         component: () => import('@/views/dashboard.vue')
       },
       {
-        path: '/user',
-        name: 'user',
+        path: '/my',
+        name: 'my',
         meta: {
           title: '我的'
         },
-        component: () => import('@/views/user.vue')
-      }
-    ]
+        component: () => import('@/views/my.vue')
+      },
+      {
+        path: '/message',
+        name: 'message',
+        meta: {
+          title: '消息'
+        },
+        component: () => import('@/views/message.vue')
+      },
+    ],
   },
+  {
+    path: '/details/:id',
+    name: 'details',
+    meta: {
+      title: '商品详情页'
+    },
+    component: () => import('@/views/details.vue'),
+    props: true,
+  }
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: routes
+  routes: routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  }
 })
 
 router.beforeEach((to, from, next) => {
